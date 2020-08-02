@@ -19,7 +19,7 @@ const LocationPicker = ({ onLocationChange }) => {
   const [cities, setCities] = useState([])
   const [results, setResults] = useState([])
   useEffect(() => {
-    fetch(process.env.PUBLIC_URL + 'city.list.json')
+    fetch(process.env.PUBLIC_URL + '/city.list.json')
       .then((resp) => resp.json())
       .then((resp) => setCities(resp))
   }, [])
