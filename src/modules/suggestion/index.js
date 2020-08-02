@@ -1,3 +1,4 @@
+import { message } from 'antd'
 import { isBefore, isAfter } from 'date-fns'
 import rainSuggestionGen from './rainSuggestionGen'
 import windSuggestionGen from './windSuggestionGen'
@@ -8,7 +9,13 @@ import clothSuggestionGen from './clothSuggestionGen'
 export function fetchForecast({ lat, long }) {
   return fetch(
     `//api.openweathermap.org/data/2.5/forecast?lat=${lat}&appid=${process.env.REACT_APP_OPEN_WEATHER_KEY}&lon=${long}&units=metric`,
-  ).then((resp) => resp.json())
+  ).then((resp) => {
+    if(!resp.ok) throw new Error(resp.status + ': '+ resp.statusText)
+    return resp.json()
+  }).catch(error => {
+    message.error('Api data fetching has failed: '+ error.message)
+    return Promise.reject(error)
+  })
 }
 
 export async function analyse(userData) {
