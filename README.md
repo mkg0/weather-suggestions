@@ -1,6 +1,6 @@
 # Weather Suggestions
 
-Get outfit suggestions for your next trip regarding the weather conditions. Your life will get along better with weather conditions without any stress. It uses openweather api
+Get outfit suggestions for your next trip regarding the weather conditions. Your life will get along better with weather forecasts with a planner. It uses openweather api
 
 # Development
 
@@ -12,3 +12,9 @@ Get outfit suggestions for your next trip regarding the weather conditions. Your
 # Contribution
 
 First open an issue to discuss the feature/bug you want to contribute.
+
+## TODO
+
+  - Write tests
+  - Better search for cities
+  - Add daily weather forecasts indicators
