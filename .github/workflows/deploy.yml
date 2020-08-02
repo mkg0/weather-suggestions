@@ -12,7 +12,7 @@ jobs:
       - name: Install and Build
         run: |
           npm install
-          npm run build
+          REACT_APP_OPEN_WEATHER_KEY=d2a0241c3d10d23b9ea544795b718dd0 npm run build
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@3.5.9
